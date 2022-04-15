@@ -8,18 +8,18 @@ using TheHangmanGame.ViewModels;
 
 namespace TheHangmanGame.Commands
 {
-    public class NavigateLoginCommand : CommandBase
+    public class NavigateAccountCommand : CommandBase
     {
         private readonly NavigationStore _navigationStore;
 
-        public NavigateLoginCommand(NavigationStore navigationStore)
+        public NavigateAccountCommand(NavigationStore navigationStore)
         {
             _navigationStore = navigationStore;
         }
 
         public override void Execute(object parameter)
         {
-            _navigationStore.CurrentViewModel = new LoginViewModel(_navigationStore);
+            _navigationStore.CurrentViewModel = new AccountViewModel(_navigationStore);
         }
     }
 }

@@ -21,3 +21,26 @@ C:\Users\razva\OneDrive - Universitatea Transilvania din Brasov\Desktop\MVP\TheH
 C:\Users\razva\OneDrive - Universitatea Transilvania din Brasov\Desktop\MVP\TheHangmanGame\TheHangmanGame\obj\Debug\TheHangmanGame.pdb
 C:\Users\razva\OneDrive - Universitatea Transilvania din Brasov\Desktop\MVP\TheHangmanGame\TheHangmanGame\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\razva\OneDrive - Universitatea Transilvania din Brasov\Desktop\MVP\TheHangmanGame\TheHangmanGame\obj\Debug\TheHangmanGame.csproj.SuggestedBindingRedirects.cache
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\bin\Debug\TheHangmanGame.exe.config
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\bin\Debug\TheHangmanGame.exe
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\bin\Debug\TheHangmanGame.pdb
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\TheHangmanGame.csproj.AssemblyReference.cache
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\TheHangmanGame.csproj.SuggestedBindingRedirects.cache
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\MainWindow.g.cs
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\Views\AccountView.g.cs
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\Views\GameView.g.cs
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\Views\LoginView.g.cs
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\App.g.cs
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\TheHangmanGame_MarkupCompile.cache
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\TheHangmanGame_MarkupCompile.lref
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\MainWindow.baml
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\Views\AccountView.baml
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\Views\GameView.baml
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\Views\LoginView.baml
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\TheHangmanGame.g.resources
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\TheHangmanGame.Properties.Resources.resources
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\TheHangmanGame.csproj.GenerateResource.cache
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\TheHangmanGame.csproj.CoreCompileInputs.cache
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\TheHangmanGame.exe
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\TheHangmanGame.pdb

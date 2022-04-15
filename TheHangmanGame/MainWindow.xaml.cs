@@ -20,6 +20,7 @@ namespace TheHangmanGame
         public MainWindow()
         {
             InitializeComponent();
+            this.Hide();
         }
     }
 }

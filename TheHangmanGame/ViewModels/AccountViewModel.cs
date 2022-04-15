@@ -11,9 +11,7 @@ namespace TheHangmanGame.ViewModels
 {
     public class AccountViewModel : ViewModelBase
     {
-
-        private readonly NavigationStore _navigationStore;
-
+        //private readonly NavigationStore _navigationStore;
         public ICommand NavigateLoginCommand { get; }
 
         public AccountViewModel(NavigationStore navigationStore)

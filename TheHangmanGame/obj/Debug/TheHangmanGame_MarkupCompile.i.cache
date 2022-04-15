@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\razva\OneDrive - Universitatea Transilvania din Brasov\Desktop\MVP\TheHangmanGame\TheHangmanGame\obj\Debug\
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\
 TheHangmanGame
 none
 false
 DEBUG;TRACE
-C:\Users\razva\OneDrive - Universitatea Transilvania din Brasov\Desktop\MVP\TheHangmanGame\TheHangmanGame\App.xaml
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\App.xaml
 4-403972822
 
-161470740162
+171158001605
 141458853696
 MainWindow.xaml;Views\AccountView.xaml;Views\GameView.xaml;Views\LoginView.xaml;
 
-False
+True
 

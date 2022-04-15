@@ -23,12 +23,12 @@
             Margin="0 20 0 0"
             Text="{Binding WelcomeMessage}" />
 
-        <!--<Button
+        <Button
             Grid.Row="2"
             Margin="0 20 0 0"
             Padding="5 2"
             HorizontalAlignment="Left"
-            Command="{Binding NavigateLoginCommand}"
-            Content="Start" />-->
+            Command="{Binding NavigateAccountCommand}"
+            Content="Let's go" />
     </Grid>
 </UserControl>
