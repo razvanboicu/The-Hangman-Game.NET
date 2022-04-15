@@ -1,0 +1,22 @@
+﻿<Window x:Class="TheHangmanGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewmodels="clr-namespace:TheHangmanGame.ViewModels"
+        xmlns:views="clr-namespace:TheHangmanGame.Views"
+        xmlns:local="clr-namespace:TheHangmanGame"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <ContentControl Content="{Binding CurrentViewModel}">
+        <ContentControl.Resources>
+            <DataTemplate DataType="{x:Type viewmodels:LoginViewModel}">
+                <views:LoginView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:AccountViewModel}">
+                <views:AccountView/>
+            </DataTemplate>
+        </ContentControl.Resources>
+    </ContentControl>
+                   
+</Window>
