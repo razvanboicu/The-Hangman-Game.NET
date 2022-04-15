@@ -16,11 +16,10 @@ namespace TheHangmanGame
     /// </summary>
     public partial class App : Application
     {
-            NavigationStore _navigationStore = new NavigationStore();
         protected override void OnStartup(StartupEventArgs e)
         {
-
-            _navigationStore.CurrentViewModel = new AccountViewModel(_navigationStore);
+             NavigationStore _navigationStore = new NavigationStore();
+            _navigationStore.CurrentViewModel = new LoginViewModel(_navigationStore);
             MainWindow = new MainWindow()
             {
                 DataContext = new MainViewModel(_navigationStore)

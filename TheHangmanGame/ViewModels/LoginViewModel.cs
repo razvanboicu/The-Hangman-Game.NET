@@ -15,7 +15,7 @@ namespace TheHangmanGame.ViewModels
         public ICommand NavigateAccountCommand { get; }
         public LoginViewModel(NavigationStore navigationStore)
         {
-            NavigateAccountCommand = new NavigateAccountCommand(navigationStore);
+            NavigateAccountCommand = new NavigateCommand<AccountViewModel>(navigationStore, () => new AccountViewModel(navigationStore));
         }
     }
 }
