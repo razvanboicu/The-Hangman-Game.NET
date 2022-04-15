@@ -44,3 +44,10 @@ E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\TheHangmanGame
 E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\TheHangmanGame.csproj.CoreCompileInputs.cache
 E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\TheHangmanGame.exe
 E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\TheHangmanGame.pdb
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\bin\Debug\MaterialDesignColors.dll
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\bin\Debug\MaterialDesignThemes.Wpf.dll
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\bin\Debug\MaterialDesignColors.pdb
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\bin\Debug\MaterialDesignThemes.Wpf.pdb
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\bin\Debug\MaterialDesignThemes.Wpf.xml
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\App.baml
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\TheHangmanGame.csproj.CopyComplete

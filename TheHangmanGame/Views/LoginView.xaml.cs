@@ -24,5 +24,10 @@ namespace TheHangmanGame.Views
         {
             InitializeComponent();
         }
+
+        private void TextBlock_TargetUpdated(object sender, DataTransferEventArgs e)
+        {
+
+        }
     }
 }
