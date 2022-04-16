@@ -18,8 +18,9 @@ namespace TheHangmanGame
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            UserStore userStore = new UserStore();
              NavigationStore _navigationStore = new NavigationStore();
-            _navigationStore.CurrentViewModel = new LoginViewModel(_navigationStore);
+            _navigationStore.CurrentViewModel = new LoginViewModel(_navigationStore, userStore);
             MainWindow = new MainWindow()
             {
                 DataContext = new MainViewModel(_navigationStore)
