@@ -11,5 +11,12 @@ namespace TheHangmanGame.Models
         public string username { get; set; }  
         public string password { get; set; }
 
+        public User(string id, string pw)
+        {
+            username = id;
+            password = pw;
+        }
+
+        public User() { }
     }
 }

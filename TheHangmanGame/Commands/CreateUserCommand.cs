@@ -9,29 +9,28 @@ using TheHangmanGame.ViewModels;
 
 namespace TheHangmanGame.Commands
 {
-    internal class CreateUserCommand : CommandBase
+    public class CreateUserCommand : CommandBase
     {
-        private readonly RegisterViewModel _viewModel;
+        private readonly RegisterViewModel _registerViewModel;
         private readonly UserStore _userStore;
 
         public CreateUserCommand(RegisterViewModel viewModel, UserStore userStore)
         {
-            _viewModel = viewModel;
+            _registerViewModel = viewModel;
             _userStore = userStore;
         }
 
         public override void Execute(object parameter)
         {
-            if(_viewModel.Username != null && _viewModel.Password != null)
+            if(_registerViewModel.Username != null && _registerViewModel.Password != null)
             {
                 User user = new User()
                 {
-                    username = _viewModel.Username,
-                    password = _viewModel.Password
+                    username = _registerViewModel.Username,
+                    password = _registerViewModel.Password
                 };
                 _userStore.CreateUser(user);
             }
-
         }
     }
 }

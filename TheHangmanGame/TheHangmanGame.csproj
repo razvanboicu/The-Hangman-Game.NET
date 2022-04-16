@@ -66,6 +66,7 @@
     </ApplicationDefinition>
     <Compile Include="Commands\CommandBase.cs" />
     <Compile Include="Commands\CreateUserCommand.cs" />
+    <Compile Include="Commands\LoginCommand.cs" />
     <Compile Include="Commands\NavigateCommand.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Stores\NavigationStore.cs" />
@@ -143,7 +144,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Services\Users.txt" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagez\lock.png" />
   </ItemGroup>

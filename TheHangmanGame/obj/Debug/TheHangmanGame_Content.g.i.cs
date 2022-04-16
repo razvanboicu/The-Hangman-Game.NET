@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/lock.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("services/users.txt")]
 
 
