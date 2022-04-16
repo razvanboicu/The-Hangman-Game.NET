@@ -157,16 +157,10 @@
     <Resource Include="Services\Users.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Imagez\lock.png" />
+    <Resource Include="Imagez\credits.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Views\lock.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\hangmanGame.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\credits.png" />
+    <Resource Include="Imagez\hangmanGame.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.4.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.4.0\build\MaterialDesignThemes.targets')" />

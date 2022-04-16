@@ -10,7 +10,7 @@
     <Grid>
         <Border VerticalAlignment="Center" CornerRadius ="5 5 5 5" Background="White"></Border>
         <StackPanel Width="350" HorizontalAlignment="Center">
-            <Image Source="/Views/credits.png" Width="240" Height="90" VerticalAlignment="Center" Margin="5" Stretch="Fill"/>
+            <Image Source="/Imagez/credits.png" Width="240" Height="90" VerticalAlignment="Center" Margin="5" Stretch="Fill"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="20 100 0 0">
             <StackPanel Width="250" HorizontalAlignment="Center" VerticalAlignment="Top">

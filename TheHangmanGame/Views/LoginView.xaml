@@ -17,12 +17,12 @@
         <Border Height="390" VerticalAlignment="Center" CornerRadius="180 5 180 180" Background="#100E17"></Border>
         <StackPanel Orientation="Horizontal">
             <StackPanel Width="450" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Image Source="/Views/hangmanGame.png" Width="320" Height="320" VerticalAlignment="Center" Margin="30" Stretch="Fill"/>
+                <Image Source="/Imagez/hangmanGame.png" Width="320" Height="320" VerticalAlignment="Center" Margin="30" Stretch="Fill"/>
             </StackPanel>
             <StackPanel Width="350" VerticalAlignment="Center">
                 <StackPanel Margin="20 40">
                     <StackPanel Width="350" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Image Source="/Views/credits.png" Width="240" Height="90" VerticalAlignment="Center" Margin="5" Stretch="Fill"/>
+                        <Image Source="/Imagez/credits.png" Width="240" Height="90" VerticalAlignment="Center" Margin="5" Stretch="Fill"/>
                     </StackPanel>
                     <!--<TextBlock Margin="20" Foreground="White" TextAlignment="Center" FontSize="38" FontFamily="Great Vibes">Login</TextBlock>-->
                     <StackPanel Orientation="Horizontal" Margin="10">
