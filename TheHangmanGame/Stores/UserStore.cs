@@ -38,13 +38,10 @@ namespace TheHangmanGame.Stores
             string[] temp;
             List<Tuple<string, string>> playersFromFile = new List<Tuple<string, string>>();
             temp = System.IO.File.ReadAllLines(@"E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\Services\Users.txt");
-            for (int i = 0; i < temp.Length / 2; i += 2)
+            foreach (string it in temp)
             {
-                playersFromFile.Add(new Tuple<string, string>(temp[i], temp[i + 1]));
-            }
-            foreach (Tuple<string, string> user in playersFromFile)
-            {
-                if (user.Item1 == searchedUser.username && user.Item2 == searchedUser.password)
+                string[] userAndPassword = it.Split(' ');
+                if (userAndPassword[0] == searchedUser.username && userAndPassword[1] == searchedUser.password)
                     return true;
             }
             return false;
