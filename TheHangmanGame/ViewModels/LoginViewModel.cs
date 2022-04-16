@@ -13,9 +13,11 @@ namespace TheHangmanGame.ViewModels
     {
         public string WelcomeMessage => "Esti in fereastra de Login";
         public ICommand NavigateAccountCommand { get; }
+        public ICommand NavigateRegisterCommand { get; }
         public LoginViewModel(NavigationStore navigationStore)
         {
             NavigateAccountCommand = new NavigateCommand<AccountViewModel>(navigationStore, () => new AccountViewModel(navigationStore));
+            NavigateRegisterCommand = new NavigateCommand<RegisterViewModel>(navigationStore, () => new RegisterViewModel(navigationStore));
         }
     }
 }
