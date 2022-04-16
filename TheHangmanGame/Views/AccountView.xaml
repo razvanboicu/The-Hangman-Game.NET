@@ -3,24 +3,52 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:TheHangmanGame.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="720" d:DesignWidth="1280" Background="Black" >
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-        </Grid.RowDefinitions>
- 
-
-        <Button
-            Grid.Row="3"
-            Margin="0 20 0 0"
-            Padding="5 2"
-            HorizontalAlignment="Left"
-            Command="{Binding NavigateLoginCommand}"
-            Content="Go to login window" />
+        <Border VerticalAlignment="Center" CornerRadius ="5 5 5 5" Background="White"></Border>
+        <StackPanel Width="350" HorizontalAlignment="Center">
+            <Image Source="/Views/credits.png" Width="240" Height="90" VerticalAlignment="Center" Margin="5" Stretch="Fill"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="20 100 0 0">
+            <StackPanel Width="250" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <materialDesign:PackIcon Kind="User" Width="25" Height="25" Foreground="White"></materialDesign:PackIcon>
+                    <TextBlock Text="{Binding CurrentUsername, UpdateSourceTrigger=PropertyChanged}" Margin="10 0" FontFamily="Impact" FontSize="20" Foreground="White" Width="250" ></TextBlock>
+                </StackPanel>
+                <StackPanel Margin="10" HorizontalAlignment="Left">
+                    <Button Width="110" Height="40" Style="{StaticResource MaterialDesignFlatSecondaryButton}"
+                                materialDesign:ButtonAssist.CornerRadius="15" BorderThickness="5" BorderBrush="Gray"
+                                Background="DarkGray" Foreground="White" ToolTip="Start a new game from scratch" >
+                        New Game
+                    </Button>
+                </StackPanel>
+                <StackPanel Margin="10" HorizontalAlignment="Left">
+                    <Button Width="110" Height="40" Style="{StaticResource MaterialDesignFlatSecondaryButton}"
+                                materialDesign:ButtonAssist.CornerRadius="15" BorderThickness="5" BorderBrush="Gray"
+                                Background="DarkGray" Foreground="White" ToolTip="Continue a saved game ">
+                        Load Game
+                    </Button>
+                </StackPanel>
+                <StackPanel Margin="10" HorizontalAlignment="Left">
+                    <Button Width="110" Height="40" Style="{StaticResource MaterialDesignFlatSecondaryButton}"
+                                materialDesign:ButtonAssist.CornerRadius="15" BorderThickness="5" BorderBrush="Gray"
+                                Background="DarkGray" Foreground="White" ToolTip="Settings" Command="{Binding Path = GoToSettingsCommand}">
+                        Settings
+                    </Button>
+                </StackPanel>
+                <StackPanel Margin="10" HorizontalAlignment="Left">
+                    <Button Width="110" Height="40" Style="{StaticResource MaterialDesignFlatSecondaryButton}"
+                                materialDesign:ButtonAssist.CornerRadius="15" BorderThickness="5" BorderBrush="Gray" 
+                                Background="DarkGray" Foreground="Red" ToolTip="Log Out" Command="{Binding Path = LogOutCommand}">
+                        Log Out
+                    </Button>
+                </StackPanel>
+                <!--Chestii de comenzi pt user-->
+            </StackPanel>
+            
+        </StackPanel>
     </Grid>
 </UserControl>

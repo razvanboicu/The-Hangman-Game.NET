@@ -14,12 +14,26 @@ namespace TheHangmanGame.ViewModels
     {
         //private readonly NavigationStore _navigationStore;
         private User _currentUserLoggedIn;
-        public ICommand NavigateLoginCommand { get; }
+        private string _currentUsername;
 
+        public User CurrentUserLoggedIn
+        {
+            get { return _currentUserLoggedIn; }
+        }
+        public string CurrentUsername
+        {
+            get { return _currentUsername; }
+            set { _currentUsername = value; }
+        }
+
+        public ICommand LogOutCommand { get; }
+        public ICommand GoToSettingsCommand { get; }
         public AccountViewModel(NavigationStore navigationStore, UserStore userStore, User user)
         {
             _currentUserLoggedIn = user;
-            NavigateLoginCommand = new NavigateCommand<LoginViewModel>(navigationStore, ()=> new LoginViewModel(navigationStore, userStore));
+            _currentUsername = _currentUserLoggedIn.username;
+            GoToSettingsCommand = new SettingsCommand(this, userStore, navigationStore, _currentUserLoggedIn);
+            LogOutCommand = new NavigateCommand<LoginViewModel>(navigationStore, ()=> new LoginViewModel(navigationStore, userStore));
         }
     }
 }

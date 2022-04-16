@@ -53,3 +53,5 @@ E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\App.baml
 E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\TheHangmanGame.csproj.CopyComplete
 E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\Views\RegisterView.g.cs
 E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\Views\RegisterView.baml
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\Views\SettingsView.g.cs
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\Views\SettingsView.baml

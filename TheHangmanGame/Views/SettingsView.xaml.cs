@@ -16,15 +16,13 @@ using System.Windows.Shapes;
 namespace TheHangmanGame.Views
 {
     /// <summary>
-    /// Interaction logic for AccountView.xaml
+    /// Interaction logic for SettingsView.xaml
     /// </summary>
-    public partial class AccountView : UserControl
+    public partial class SettingsView : UserControl
     {
-        public AccountView()
+        public SettingsView()
         {
             InitializeComponent();
         }
-
-       
     }
 }

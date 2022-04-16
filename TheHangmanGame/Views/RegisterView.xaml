@@ -6,23 +6,23 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:TheHangmanGame.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="720" d:DesignWidth="1280">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush StartPoint="0.7, 0" EndPoint="0.3, 1">
-                <GradientStop Color="#FEE63070" Offset="1"></GradientStop>
+                <GradientStop Color="#FFFFEFD5" Offset="1"></GradientStop>
                 <GradientStop Color="#FFFE8714" Offset="0"></GradientStop>
             </LinearGradientBrush>
         </Grid.Background>
-        <Border Height="390" VerticalAlignment="Top" CornerRadius="180 180 180 180" Background="Black"></Border>
+        <Border Height="390" VerticalAlignment="Center" CornerRadius="5 180 180 180" Background="Black"></Border>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <!--<StackPanel Width="350">
                 -->
             <!--<Image Source="/Views/lock.png" Width="220" Height="220" VerticalAlignment="Center" Margin="30" Stretch="Fill"/>-->
             <!--
             </StackPanel>-->
-            <StackPanel Width="350">
-                <StackPanel Margin="20 50">
+            <StackPanel Width="350" VerticalAlignment="Center">
+                <StackPanel Margin="20 50"  >
                     <TextBlock Margin="20" Foreground="White" TextAlignment="Center" FontSize="38" FontFamily="Great Vibes">Sign Up</TextBlock>
                     <StackPanel Orientation="Horizontal" Margin="10">
                         <materialDesign:PackIcon Kind="User" Width="25" Height="25" Foreground="White"></materialDesign:PackIcon>

@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("services/users.txt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/credits.png")]
 
 

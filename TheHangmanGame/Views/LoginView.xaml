@@ -6,22 +6,25 @@
              xmlns:local="clr-namespace:TheHangmanGame.Views"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"  >
+             d:DesignHeight="720" d:DesignWidth="1280"  >
     <Grid>
         <Grid.Background>
             <LinearGradientBrush StartPoint="0.1, 0" EndPoint="0.9, 1">
-                <GradientStop Color="#FEE63070" Offset="1"></GradientStop>
+                <GradientStop Color="#FFFFEFD5" Offset="1"></GradientStop>
                 <GradientStop Color="#FFFE8704" Offset="0"></GradientStop>
             </LinearGradientBrush>
         </Grid.Background>
-        <Border Height="390" VerticalAlignment="Top" CornerRadius="0 0 180 0" Background="#100E17"></Border>
+        <Border Height="390" VerticalAlignment="Center" CornerRadius="180 5 180 180" Background="#100E17"></Border>
         <StackPanel Orientation="Horizontal">
-            <StackPanel Width="350">
-                <Image Source="/Views/lock.png" Width="220" Height="220" VerticalAlignment="Center" Margin="30" Stretch="Fill"/>
+            <StackPanel Width="450" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image Source="/Views/hangmanGame.png" Width="320" Height="320" VerticalAlignment="Center" Margin="30" Stretch="Fill"/>
             </StackPanel>
-            <StackPanel Width="350">
+            <StackPanel Width="350" VerticalAlignment="Center">
                 <StackPanel Margin="20 40">
-                    <TextBlock Margin="20" Foreground="White" TextAlignment="Center" FontSize="38" FontFamily="Great Vibes">Login</TextBlock>
+                    <StackPanel Width="350" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image Source="/Views/credits.png" Width="240" Height="90" VerticalAlignment="Center" Margin="5" Stretch="Fill"/>
+                    </StackPanel>
+                    <!--<TextBlock Margin="20" Foreground="White" TextAlignment="Center" FontSize="38" FontFamily="Great Vibes">Login</TextBlock>-->
                     <StackPanel Orientation="Horizontal" Margin="10">
                         <materialDesign:PackIcon Kind="User" Width="25" Height="25" Foreground="White"></materialDesign:PackIcon>
                         <TextBox Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" Margin="10 0" materialDesign:HintAssist.Hint="Enter username" Foreground="White" Width="250" BorderBrush="White" CaretBrush="#FFD94448" SelectionBrush="#FFD94448"></TextBox>

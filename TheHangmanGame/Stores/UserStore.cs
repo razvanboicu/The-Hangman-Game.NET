@@ -18,11 +18,15 @@ namespace TheHangmanGame.Stores
         {
             try
             {
-                UserCreated?.Invoke(user);
-                using (StreamWriter writer = File.AppendText(pathFile))
+                if (!SearchUser(user))
                 {
-                    writer.WriteLine(user.username + " " + user.password);
-                    Console.WriteLine("Successfully new user created");
+                    UserCreated?.Invoke(user);
+                    using (StreamWriter writer = File.AppendText(pathFile))
+                    {
+                        writer.WriteLine(user.username + " " + user.password);
+                        Console.WriteLine("Successfully new user created");
+                    }
+
                 }
 
             }
