@@ -12,8 +12,16 @@ namespace TheHangmanGame.Stores
     {
         public event Action<User> UserCreated;
         private string pathFile = @"E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\Services\Users.txt";
-        
+
         public UserStore() { }
+        public void UpdateAvatarProfile(User user)
+        {
+            string[] temp;
+            temp = System.IO.File.ReadAllLines(@pathFile);
+            string searchedUser = user.username + " " + user.password;
+
+
+        }
         public void CreateUser(User user)
         {
             try
@@ -23,10 +31,9 @@ namespace TheHangmanGame.Stores
                     UserCreated?.Invoke(user);
                     using (StreamWriter writer = File.AppendText(pathFile))
                     {
-                        writer.WriteLine(user.username + " " + user.password);
+                        writer.WriteLine(user.username + " " + user.password + " #");
                         Console.WriteLine("Successfully new user created");
                     }
-
                 }
 
             }
@@ -38,10 +45,10 @@ namespace TheHangmanGame.Stores
 
         public bool SearchUser(User searchedUser)
         {
-           // Console.Write("DA FRATE SUNT AICI");
+            // Console.Write("DA FRATE SUNT AICI");
             string[] temp;
-            List<Tuple<string, string>> playersFromFile = new List<Tuple<string, string>>();
-            temp = System.IO.File.ReadAllLines(@"E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\Services\Users.txt");
+            List<Tuple<string, string, string>> playersFromFile = new List<Tuple<string, string, string>>();
+            temp = System.IO.File.ReadAllLines(@pathFile);
             foreach (string it in temp)
             {
                 string[] userAndPassword = it.Split(' ');

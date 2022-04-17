@@ -68,7 +68,10 @@
     <Compile Include="Commands\CreateUserCommand.cs" />
     <Compile Include="Commands\LoginCommand.cs" />
     <Compile Include="Commands\NavigateCommand.cs" />
+    <Compile Include="Commands\NextImageCommand.cs" />
+    <Compile Include="Commands\PrevImageCommand.cs" />
     <Compile Include="Commands\SettingsCommand.cs" />
+    <Compile Include="Commands\UpdateAvatarCommand.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Stores\NavigationStore.cs" />
     <Compile Include="Stores\UserStore.cs" />
@@ -161,6 +164,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagez\hangmanGame.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Imagez\NewFolder1\1.jpg" />
+    <Resource Include="Imagez\NewFolder1\2.jpg" />
+    <Resource Include="Imagez\NewFolder1\3.jpg" />
+    <Resource Include="Imagez\NewFolder1\4.jpg" />
+    <Resource Include="Imagez\NewFolder1\5.jpg" />
+    <Resource Include="Imagez\NewFolder1\6.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.4.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.4.0\build\MaterialDesignThemes.targets')" />

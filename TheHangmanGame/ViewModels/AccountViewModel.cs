@@ -28,12 +28,13 @@ namespace TheHangmanGame.ViewModels
 
         public ICommand LogOutCommand { get; }
         public ICommand GoToSettingsCommand { get; }
+        
         public AccountViewModel(NavigationStore navigationStore, UserStore userStore, User user)
         {
             _currentUserLoggedIn = user;
             _currentUsername = _currentUserLoggedIn.username;
             GoToSettingsCommand = new SettingsCommand(this, userStore, navigationStore, _currentUserLoggedIn);
-            LogOutCommand = new NavigateCommand<LoginViewModel>(navigationStore, ()=> new LoginViewModel(navigationStore, userStore));
+            LogOutCommand = new NavigateCommand<LoginViewModel>(navigationStore, () => new LoginViewModel(navigationStore, userStore));
         }
     }
 }
