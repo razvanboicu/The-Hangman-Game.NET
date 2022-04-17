@@ -24,8 +24,11 @@ namespace TheHangmanGame.Commands
         public override void Execute(object parameter)
         {
             if (_loginViewModel.Username != null && _loginViewModel.Password != null)
-                if (_userStore.SearchUser(new User(_loginViewModel.Username, _loginViewModel.Password)))
-                    new NavigateCommand<AccountViewModel>(_navigationStore, () => new AccountViewModel(_navigationStore, _userStore, new User(_loginViewModel.Username, _loginViewModel.Password))).Execute(this);
+                if (_userStore.SearchUser(new User(_loginViewModel.Username, _loginViewModel.Password)) is User)
+                {
+                    User loggedInUser = _userStore.SearchUser(new User(_loginViewModel.Username, _loginViewModel.Password));
+                    new NavigateCommand<AccountViewModel>(_navigationStore, () => new AccountViewModel(_navigationStore, _userStore, loggedInUser)).Execute(this);
+                }
         }
     }
 }

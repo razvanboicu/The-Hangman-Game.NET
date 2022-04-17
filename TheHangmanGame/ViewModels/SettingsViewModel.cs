@@ -17,9 +17,8 @@ namespace TheHangmanGame.ViewModels
         private User _currentUserLoggedIn;
         private readonly NavigationStore _navigationStore;
         private readonly UserStore _userStore;
-        //private readonly ImageStore _currentImageStore = new ImageStore();
         private string _currentUsername;
-        private int selectedIndex = 2;
+        private int selectedIndex = 1;
 
 
         public int SelectedIndex
@@ -36,7 +35,7 @@ namespace TheHangmanGame.ViewModels
         }
         public ImgPath ImagePath
         {
-            get { return new BitmapImage(new Uri(@"/Imagez/NewFolder1/" + selectedIndex + ".jpg", UriKind.Relative)); }
+            get { return new BitmapImage(new Uri(@"/Imagez/NewFolder/" + selectedIndex + ".jpg", UriKind.Relative)); }
             set { ImagePath = value; }
         }
         public string CurrentUsername
@@ -49,8 +48,6 @@ namespace TheHangmanGame.ViewModels
         public ICommand PreviousImageButton { get; }
         public ICommand NextImageButton { get; }
         public ICommand UpdateAvatar { get; }
-
-
         public SettingsViewModel(NavigationStore navigationStore, UserStore userStore, User user)
         {
             _userStore = userStore;
@@ -61,7 +58,7 @@ namespace TheHangmanGame.ViewModels
             BackCommand = new NavigateCommand<AccountViewModel>(_navigationStore, () => new AccountViewModel(_navigationStore, _userStore, _currentUserLoggedIn));
             PreviousImageButton = new PrevImageCommand(this);
             NextImageButton = new NextImageCommand(this);
-            //UpdateAvatar = 
+            UpdateAvatar = new UpdateAvatarCommand(this, _currentUserLoggedIn, _userStore);
         }
     }
 }

@@ -22,6 +22,9 @@
             <DataTemplate DataType="{x:Type viewmodels:SettingsViewModel}">
                 <views:SettingsView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:GameViewModel}">
+                <views:GameView/>
+            </DataTemplate>
         </ContentControl.Resources>
     </ContentControl>
                    

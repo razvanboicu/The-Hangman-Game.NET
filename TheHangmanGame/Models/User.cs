@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ImgPath = System.Windows.Media.ImageSource;
 
 namespace TheHangmanGame.Models
 {
@@ -10,14 +11,18 @@ namespace TheHangmanGame.Models
     {
         public string username { get; set; }  
         public string password { get; set; }
-        public string avatarPath { get; set; }
-
+        public ImgPath avatarPath { get; set; }
         public User(string id, string pw)
         {
             username = id;
             password = pw;
         }
-
+        public User(string id, string pw, ImgPath path)
+        {
+            username = id;
+            password = pw;
+            avatarPath = path;
+        }
         public User() { }
     }
 }

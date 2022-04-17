@@ -8,13 +8,57 @@
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="1280" Background="Black" >
     <Grid>
-        <Border VerticalAlignment="Center" CornerRadius ="5 5 5 5" Background="White"></Border>
+        <StackPanel Orientation="Horizontal" >
+            <StackPanel Orientation="Vertical" Margin="20 20 0 0" Width="300" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <StackPanel Width="150" Height="150" HorizontalAlignment="Left" >
+                    <Image Source="{Binding ImagePath}" Stretch="Uniform" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <materialDesign:PackIcon Kind="User" Width="25" Height="25" Foreground="White"></materialDesign:PackIcon>
+                    <TextBlock Text="{Binding CurrentUsername, UpdateSourceTrigger=PropertyChanged}" Margin="10 0" FontFamily="Impact" FontSize="20" Foreground="White"></TextBlock>
+                </StackPanel>
+                <StackPanel Margin="10" HorizontalAlignment="Left">
+                    <Button Width="110" Height="40" Style="{StaticResource MaterialDesignFlatSecondaryButton}"
+                                materialDesign:ButtonAssist.CornerRadius="15" BorderThickness="5" BorderBrush="Gray"
+                                Background="DarkGray" Foreground="White" ToolTip="Start a new game from scratch" Command="{Binding NewGameCommand}" >
+                        New Game
+                    </Button>
+                </StackPanel>
+                <StackPanel Margin="10" HorizontalAlignment="Left">
+                    <Button Width="110" Height="40" Style="{StaticResource MaterialDesignFlatSecondaryButton}"
+                                materialDesign:ButtonAssist.CornerRadius="15" BorderThickness="5" BorderBrush="Gray"
+                                Background="DarkGray" Foreground="White" ToolTip="Continue a saved game ">
+                        Load Game
+                    </Button>
+                </StackPanel>
+                <StackPanel Margin="10" HorizontalAlignment="Left">
+                    <Button Width="110" Height="40" Style="{StaticResource MaterialDesignFlatSecondaryButton}"
+                                materialDesign:ButtonAssist.CornerRadius="15" BorderThickness="5" BorderBrush="Gray"
+                                Background="DarkGray" Foreground="White" ToolTip="Settings" Command="{Binding Path = GoToSettingsCommand}">
+                        Settings
+                    </Button>
+                </StackPanel>
+                <StackPanel Margin="10" HorizontalAlignment="Left">
+                    <Button Width="110" Height="40" Style="{StaticResource MaterialDesignFlatSecondaryButton}"
+                                materialDesign:ButtonAssist.CornerRadius="15" BorderThickness="5" BorderBrush="Gray" 
+                                Background="DarkGray" Foreground="Red" ToolTip="Log Out" Command="{Binding Path = LogOutCommand}">
+                        Log Out
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+
+        </StackPanel>
+        <!--<Border VerticalAlignment="Center" CornerRadius ="5 5 5 5" Background="White"></Border>
         <StackPanel Width="350" HorizontalAlignment="Center">
             <Image Source="/Imagez/credits.png" Width="240" Height="90" VerticalAlignment="Center" Margin="5" Stretch="Fill"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="20 100 0 0">
             <StackPanel Width="250" HorizontalAlignment="Center" VerticalAlignment="Top">
                 <StackPanel Orientation="Horizontal" Margin="10">
+                    <StackPanel Width="25" Height="25">
+                        <Image Source="{Binding ImagePath}" Stretch="Uniform"/>
+                    </StackPanel>
                     <materialDesign:PackIcon Kind="User" Width="25" Height="25" Foreground="White"></materialDesign:PackIcon>
                     <TextBlock Text="{Binding CurrentUsername, UpdateSourceTrigger=PropertyChanged}" Margin="10 0" FontFamily="Impact" FontSize="20" Foreground="White" Width="250" ></TextBlock>
                 </StackPanel>
@@ -46,9 +90,11 @@
                         Log Out
                     </Button>
                 </StackPanel>
-                <!--Chestii de comenzi pt user-->
+                -->
+        <!--Chestii de comenzi pt user-->
+        <!--
             </StackPanel>
             
-        </StackPanel>
+        </StackPanel>-->
     </Grid>
 </UserControl>
