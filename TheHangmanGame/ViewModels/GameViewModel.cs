@@ -23,6 +23,7 @@ namespace TheHangmanGame.ViewModels
         private ObservableCollection<Models.Button> _firstKeyboardRow;
         private ObservableCollection<Models.Button> _secondKeyboardRow;
         private ObservableCollection<Models.Button> _thirdKeyboardRow;
+
         public ImgPath ImagePath
         {
             get { return _imagePath; }
@@ -34,7 +35,7 @@ namespace TheHangmanGame.ViewModels
             set { _currentUsername = value; }
         }
         public ICommand ExitGame { get; }
-   
+
         public ObservableCollection<Models.Button> FirstKeyboardRow
         {
             get { return _firstKeyboardRow; }
@@ -43,23 +44,28 @@ namespace TheHangmanGame.ViewModels
         public ObservableCollection<Models.Button> SecondKeyboardRow
         {
             get { return _secondKeyboardRow; }
-            set { _secondKeyboardRow = value; }
+            set { _secondKeyboardRow = value;     }
         }
         public ObservableCollection<Models.Button> ThirdKeyboardRow
         {
             get { return _thirdKeyboardRow; }
-            set { _thirdKeyboardRow = value; }
+            set
+            {
+                _thirdKeyboardRow = value;
+                OnPropertyChanged(nameof(ThirdKeyboardRow));
+            }
         }
-
         public ICommand KeyboardPressed { get; }
+
         public GameViewModel() { }
         public GameViewModel(NavigationStore navigationStore, UserStore userStore, User user)
         {
-            _firstKeyboardRow = KeyboardCollection.GetKeyboardButtons('A', 'J');
-            _secondKeyboardRow = KeyboardCollection.GetKeyboardButtons('K', 'S');
-            _thirdKeyboardRow = KeyboardCollection.GetKeyboardButtons('T', 'Z');
+            _firstKeyboardRow = KeyboardGenerator.GetKeyboardButtons('A', 'J');
+            _secondKeyboardRow = KeyboardGenerator.GetKeyboardButtons('K', 'S');
+            _thirdKeyboardRow = KeyboardGenerator.GetKeyboardButtons('T', 'Z');
             KeyboardPressed = new KeyboardPressedCommand(this);
             ExitGame = new NavigateCommand<AccountViewModel>(navigationStore, () => new AccountViewModel(navigationStore, userStore, _currentUserWhoPlays));
+
             _userStore = userStore;
             _currentUserWhoPlays = user;
             _navigationStore = navigationStore;

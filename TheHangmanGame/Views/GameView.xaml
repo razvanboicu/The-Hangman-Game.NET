@@ -7,9 +7,10 @@
              xmlns:local="clr-namespace:TheHangmanGame.Views" xmlns:viewmodels="clr-namespace:TheHangmanGame.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:GameViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="1280" Background="Black">
-
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis" />
+    </UserControl.Resources>
     <Grid>
-       
         <StackPanel Orientation="Horizontal">
             <StackPanel Width="200" Orientation="Vertical">
                 <StackPanel Margin="20 20 20 20">
@@ -30,10 +31,10 @@
             <StackPanel Width="1080" Orientation="Vertical">
                 <StackPanel Orientation="Horizontal" Height="350">
                     <StackPanel Width="700">
-                        
+
                     </StackPanel>
                     <StackPanel Width="380">
-                        
+
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Height="370" VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -46,12 +47,12 @@
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Button Content="{Binding Letter}"
-                                        Visibility="{Binding Visible, Converter={StaticResource StringIsEmptyVisibilityConverter}}"
+                                        Visibility="{Binding Visible, Converter={StaticResource BoolToVis}}"
                                         Height="55" Width="55" Margin="3"
                                         Background="White" Foreground="Black" BorderBrush="White"
                                         Command="{Binding DataContext.KeyboardPressed, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType = ItemsControl}}"
                                         CommandParameter="{Binding Letter}"
-                                       ></Button>
+                                       />
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
@@ -64,7 +65,7 @@
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Button Content="{Binding Letter}"
-                                        Visibility="{Binding Visible, Converter={StaticResource StringIsEmptyVisibilityConverter}}"
+                                        Visibility="{Binding Visible, Converter={StaticResource BoolToVis}}"
                                         Height="55" Width="55" 
                                         Margin="3"
                                         Background="White" Foreground="Black" BorderBrush="White"
@@ -83,7 +84,7 @@
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Button Content="{Binding Letter}"
-                                        Visibility="{Binding Visible, Converter={StaticResource StringIsEmptyVisibilityConverter}}"
+                                         Visibility="{Binding Visible, Converter={StaticResource BoolToVis}}"
                                         Height="55" Width="55" 
                                         Margin="3"
                                         Background="White" Foreground="Black" BorderBrush="White"
@@ -96,6 +97,6 @@
                 </StackPanel>
             </StackPanel>
         </StackPanel>
-        
+
     </Grid>
 </UserControl>

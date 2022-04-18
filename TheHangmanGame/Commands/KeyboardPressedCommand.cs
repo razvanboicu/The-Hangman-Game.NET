@@ -18,8 +18,19 @@ namespace TheHangmanGame.Commands
         }
         public override void Execute(object parameter)
         {
+            //string searched = "A";
             string text = (parameter.ToString());
-            Console.WriteLine(text);
+          
+            for (int i=0;i< _gameViewModel.FirstKeyboardRow.Count; i++)
+            {
+                if(_gameViewModel.FirstKeyboardRow[i].Letter == text)
+                {
+                    Console.WriteLine(text + _gameViewModel.FirstKeyboardRow[i].Visible);
+                    _gameViewModel.FirstKeyboardRow[i].Visible = false;
+                    Console.WriteLine(text + _gameViewModel.FirstKeyboardRow[i].Visible);
+                }
+            }
+           
         }
     }
 }

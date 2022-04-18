@@ -9,7 +9,7 @@ using System.Windows.Media;
 
 namespace TheHangmanGame.Models
 {
-    public class KeyboardCollection
+    public class KeyboardGenerator
     {
         static public ObservableCollection<Button> GetKeyboardButtons(char from, char to)
         {
@@ -17,10 +17,8 @@ namespace TheHangmanGame.Models
             for (int i = 0; i <= ((to - '0') - (from - '0')); i++)
             {
                 char c = (char)((char)(((from - '0') + i - 1 ) - '0') + 'a');
-                arrayOfButtons.Add(new Button(c.ToString(), "Visibile"));
+                arrayOfButtons.Add(new Button(c.ToString(), true)) ;
             }
-            //Console.WriteLine(arrayOfButtons.Count());
-
             return arrayOfButtons;
         }
     }
