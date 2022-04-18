@@ -55,3 +55,5 @@ E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\Views\Register
 E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\Views\RegisterView.baml
 E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\Views\SettingsView.g.cs
 E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\Views\SettingsView.baml
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\Views\CategoriesSelectorView.g.cs
+E:\the-hangman-game\the-hangman-game.NET\TheHangmanGame\obj\Debug\Views\CategoriesSelectorView.baml

@@ -8,11 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("imagez/newfolder1/1.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("imagez/newfolder1/2.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("imagez/newfolder1/3.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("imagez/newfolder1/4.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("imagez/newfolder1/5.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("imagez/newfolder1/6.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("imagez/hangman/hangman0.jpg")]
 
 

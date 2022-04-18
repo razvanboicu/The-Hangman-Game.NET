@@ -16,7 +16,7 @@ namespace TheHangmanGame.ViewModels
         private User _currentUserLoggedIn;
         private string _currentUsername;
         private ImgPath _imagePath;
-
+       
         public ImgPath ImagePath
         {
             get { return _currentUserLoggedIn.avatarPath; }
@@ -42,7 +42,7 @@ namespace TheHangmanGame.ViewModels
             _currentUsername = _currentUserLoggedIn.username;
             GoToSettingsCommand = new NavigateCommand<SettingsViewModel>(navigationStore, () => new SettingsViewModel(navigationStore, userStore, _currentUserLoggedIn));
             LogOutCommand = new NavigateCommand<LoginViewModel>(navigationStore, () => new LoginViewModel(navigationStore, userStore));
-            NewGameCommand = new NavigateCommand<GameViewModel>(navigationStore, () => new GameViewModel(navigationStore, userStore, _currentUserLoggedIn)); 
+            NewGameCommand = new NavigateCommand<CategoriesSelectorViewModel>(navigationStore, () => new CategoriesSelectorViewModel(_currentUserLoggedIn, navigationStore, userStore)); 
         }
     }
 }

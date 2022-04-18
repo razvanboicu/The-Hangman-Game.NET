@@ -18,18 +18,28 @@ namespace TheHangmanGame.Stores
 
         public void UpdateAvatarProfile(User user, ImgPath newImagePath)
         {
-            //if(SearchUser(user) is User)
-            //{
-            //}
-            Console.WriteLine("NOT IMPLEMENTED YEAT");
-            //string[] temp;
-            //temp = System.IO.File.ReadAllLines(@pathFile);
-            //string searchedUser = user.username + " " + user.password + " " + user.avatarPath;
-            //Console.WriteLine(user.username + " " + user.password + " " + user.avatarPath.ToString());
-            //string modifiedUserWithNewImage = user.username + " " + user.password + " " + newImagePath;
-            //Console.WriteLine(searchedUser + "\n" + modifiedUserWithNewImage);           
-            //temp.(searchedUser, modifiedUserWithNewImage); 
-            //File.WriteAllText(@pathFile, temp); 
+            User modifiedUser = new User(user.username, user.password, newImagePath);
+            
+            List<string> lst = File.ReadAllLines(@pathFile).Where(arg => !string.IsNullOrWhiteSpace(arg)).ToList();
+            lst.RemoveAll(x => x.Split(' ')[0].Equals(user.username));
+            File.WriteAllLines(@pathFile, lst);
+            using (StreamWriter writer = File.AppendText(pathFile))
+            {
+                writer.WriteLine(modifiedUser.username + " " + modifiedUser.password + " " + newImagePath);
+                Console.WriteLine("Successfully user avatar updated!");
+            }
+            
+            
+        }
+
+        public void DeleteUser(User userForDelete)
+        {
+            
+            List<string> lst = File.ReadAllLines(@pathFile).Where(arg => !string.IsNullOrWhiteSpace(arg)).ToList();
+            lst.RemoveAll(x => x.Split(' ')[0].Equals(userForDelete.username));
+            File.WriteAllLines(@pathFile, lst);
+            Console.WriteLine("USER REMOVED");
+
         }
         public void CreateUser(User user)
         {
@@ -46,18 +56,15 @@ namespace TheHangmanGame.Stores
                         Console.WriteLine("Successfully new user created");
                     }
                 }
-
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
         }
-
-
         public User SearchUser(User searchedUser)
         {
-            // Console.Write("DA FRATE SUNT AICI");
+            //Console.Write("DA FRATE SUNT AICI");
             string[] temp;
             List<Tuple<string, string, ImgPath>> playersFromFile = new List<Tuple<string, string, ImgPath>>();
             temp = System.IO.File.ReadAllLines(@pathFile);

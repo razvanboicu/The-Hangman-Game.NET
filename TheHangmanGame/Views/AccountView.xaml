@@ -6,7 +6,7 @@
               xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:TheHangmanGame.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="720" d:DesignWidth="1280" Background="Black" >
+             d:DesignHeight="720" d:DesignWidth="1280" Background ="Black">
     <Grid>
         <StackPanel Orientation="Horizontal" >
             <StackPanel Orientation="Vertical" Margin="20 20 0 0" Width="300" HorizontalAlignment="Center" VerticalAlignment="Top">
@@ -47,7 +47,23 @@
                     </Button>
                 </StackPanel>
             </StackPanel>
-
+            <!--<StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Cars " FontSize="30" Foreground="White" />
+                    <RadioButton Checked="{Binding CarsIsChecked}" GroupName="category" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Movies " FontSize="30" Foreground="White"/>
+                    <RadioButton Checked="{Binding MoviesIsChecked}" GroupName="category" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Countries " FontSize="30" Foreground="White"/>
+                    <RadioButton Checked="{Binding CountriesIsChecked}" GroupName="category" />
+                </StackPanel>
+            </StackPanel>-->
+            <StackPanel Width="950" VerticalAlignment="Center">
+                <Image Source="/Imagez/road.jpg" Stretch="Uniform" Width="700" Height="500"></Image>
+            </StackPanel>
         </StackPanel>
         <!--<Border VerticalAlignment="Center" CornerRadius ="5 5 5 5" Background="White"></Border>
         <StackPanel Width="350" HorizontalAlignment="Center">

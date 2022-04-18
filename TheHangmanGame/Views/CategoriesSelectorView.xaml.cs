@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace TheHangmanGame.Views
 {
     /// <summary>
-    /// Interaction logic for LoginView.xaml
+    /// Interaction logic for CategoriesSelectorView.xaml
     /// </summary>
-    public partial class LoginView : UserControl
+    public partial class CategoriesSelectorView : UserControl
     {
-        public LoginView()
+        public CategoriesSelectorView()
         {
             InitializeComponent();
         }

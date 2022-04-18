@@ -4,7 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             xmlns:local="clr-namespace:TheHangmanGame.Views" xmlns:viewmodels="clr-namespace:TheHangmanGame.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:GameViewModel}"
+             xmlns:local="clr-namespace:TheHangmanGame.Views" xmlns:viewmodels="clr-namespace:TheHangmanGame.ViewModels" 
+             d:DataContext="{d:DesignInstance Type=viewmodels:GameViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="1280" Background="Black">
     <UserControl.Resources>
@@ -12,7 +13,7 @@
     </UserControl.Resources>
     <Grid>
         <StackPanel Orientation="Horizontal">
-            <StackPanel Width="200" Orientation="Vertical">
+            <StackPanel Width="350" Orientation="Vertical">
                 <StackPanel Margin="20 20 20 20">
                     <Button Width="100" Height="40" Style="{StaticResource MaterialDesignRaisedButton}"
                                 materialDesign:ButtonAssist.CornerRadius="10" BorderThickness="5" BorderBrush="DarkGray"
@@ -27,70 +28,56 @@
                     <materialDesign:PackIcon Kind="UserArrowRight" Width="25" Height="25" Foreground="White"></materialDesign:PackIcon>
                     <TextBlock Text="{Binding CurrentUsername, UpdateSourceTrigger = PropertyChanged}" Margin="10 0" FontFamily="Impact" FontSize="20" Foreground="White"></TextBlock>
                 </StackPanel>
+                <StackPanel>
+                    <Image Source="{Binding HangmanPath}" Width="250" Height="420" Stretch="Uniform"/>
+                </StackPanel>
             </StackPanel>
-            <StackPanel Width="1080" Orientation="Vertical">
+            <StackPanel Width="930" Orientation="Vertical">
                 <StackPanel Orientation="Horizontal" Height="350">
-                    <StackPanel Width="700">
-
+                    <StackPanel Width="700" Margin="15" VerticalAlignment="Top" HorizontalAlignment="Right">
+                        <TextBlock Text="{Binding CurrentCategory}" FontSize="35" FontFamily="Impact" Foreground="White"/>
+                    </StackPanel>
+                    <StackPanel Width="700" VerticalAlignment="Top" Margin="15" HorizontalAlignment="Center">
+                        <TextBlock Text="{Binding WordToGuess}" FontSize="35" FontFamily="Impact" Foreground="White"/>
                     </StackPanel>
                     <StackPanel Width="380">
 
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Height="370" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel Height="370" VerticalAlignment="Bottom" HorizontalAlignment="Center">
                     <ItemsControl ItemsSource="{Binding FirstKeyboardRow}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <StackPanel Orientation="Horizontal"  VerticalAlignment=" Center" HorizontalAlignment="Center"/>
+                                <StackPanel Orientation="Horizontal"  VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <Button Content="{Binding Letter}"
-                                        Visibility="{Binding Visible, Converter={StaticResource BoolToVis}}"
-                                        Height="55" Width="55" Margin="3"
-                                        Background="White" Foreground="Black" BorderBrush="White"
-                                        Command="{Binding DataContext.KeyboardPressed, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType = ItemsControl}}"
-                                        CommandParameter="{Binding Letter}"
-                                       />
+                                <Button Content="{Binding Letter}" Visibility="{Binding Visible, Converter={StaticResource BoolToVis}}" Height="55" Width="55" Margin="3" Background="White" Foreground="Black" BorderBrush="White" Command="{Binding DataContext.KeyboardPressed, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType = ItemsControl}}" CommandParameter="{Binding Letter}" />
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
                     <ItemsControl ItemsSource="{Binding SecondKeyboardRow}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <StackPanel Orientation="Horizontal"  VerticalAlignment=" Center" HorizontalAlignment="Center"/>
+                                <StackPanel Orientation="Horizontal"  VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <Button Content="{Binding Letter}"
-                                        Visibility="{Binding Visible, Converter={StaticResource BoolToVis}}"
-                                        Height="55" Width="55" 
-                                        Margin="3"
-                                        Background="White" Foreground="Black" BorderBrush="White"
-                                        Command="{Binding DataContext.KeyboardPressed, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType = ItemsControl}}"
-                                        CommandParameter="{Binding Letter}"
-                                       ></Button>
+                                <Button Content="{Binding Letter}" Visibility="{Binding Visible, Converter={StaticResource BoolToVis}}" Height="55" Width="55" Margin="3" Background="White" Foreground="Black" BorderBrush="White" Command="{Binding DataContext.KeyboardPressed, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType = ItemsControl}}" CommandParameter="{Binding Letter}" />
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
                     <ItemsControl ItemsSource="{Binding ThirdKeyboardRow}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <StackPanel Orientation="Horizontal" VerticalAlignment=" Center" HorizontalAlignment="Center"/>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <Button Content="{Binding Letter}"
-                                         Visibility="{Binding Visible, Converter={StaticResource BoolToVis}}"
-                                        Height="55" Width="55" 
-                                        Margin="3"
-                                        Background="White" Foreground="Black" BorderBrush="White"
-                                        Command="{Binding DataContext.KeyboardPressed, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType = ItemsControl}}"
-                                        CommandParameter="{Binding Letter}"
-                                       ></Button>
+                                <Button Content="{Binding Letter}" Visibility="{Binding Visible, Converter={StaticResource BoolToVis}}" Height="55" Width="55" Margin="3" Background="White" Foreground="Black" BorderBrush="White" Command="{Binding DataContext.KeyboardPressed, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType = ItemsControl}}" CommandParameter="{Binding Letter}" />
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
