@@ -23,26 +23,39 @@ namespace TheHangmanGame.ViewModels
         private readonly ECategory _eCategory;
         private ImgPath _imagePath;
         private string _wordToGuess;
+        private string _inProgressWordToGuess;
         private int chancesLeft;
-        private int indexOfHangman;
+        private int _indexOfHangman;
         private ImgPath _hangmanPath;
 
         private ObservableCollection<Models.Button> _firstKeyboardRow;
         private ObservableCollection<Models.Button> _secondKeyboardRow;
         private ObservableCollection<Models.Button> _thirdKeyboardRow;
-        public ImgPath HangmanPath
+
+        public string InProgressWordToGuess
         {
-            get { return new BitmapImage(new Uri(@"/Imagez/Hangman/hangman" + indexOfHangman + ".jpg", UriKind.Relative)); }
-            set { _hangmanPath = value; }
-        }
-        public int IndexOfHangman
-        {
-            get { return indexOfHangman; }
+            get { return _inProgressWordToGuess; }
             set
             {
-                indexOfHangman = value;
+                _inProgressWordToGuess = value;
+                OnPropertyChanged(nameof(InProgressWordToGuess));
+            }
+        }
+        public ICommand ResetGameButton { get; }
+
+        public int IndexOfHangman
+        {
+            get { return _indexOfHangman; }
+            set
+            {
+                _indexOfHangman = value;
                 OnPropertyChanged(nameof(HangmanPath));
             }
+        }
+        public ImgPath HangmanPath
+        {
+            get { return new BitmapImage(new Uri(@"/Imagez/Hangman/hangman" + _indexOfHangman + ".jpg", UriKind.Relative)); }
+            set { _hangmanPath = value; }
         }
         public int ChancesLeft
         {
@@ -57,7 +70,11 @@ namespace TheHangmanGame.ViewModels
         public string WordToGuess
         {
             get { return _wordToGuess; }
-            set { _wordToGuess = value; }
+            set
+            {
+                _wordToGuess = value;
+                OnPropertyChanged(nameof(WordToGuess));
+            }
         }
         public ImgPath ImagePath
         {
@@ -101,22 +118,37 @@ namespace TheHangmanGame.ViewModels
             _eCategory = category;
             InitializeTheHangmanIndexImage();
             InitializeTheGameCategory();
+            ResetChances();
             _firstKeyboardRow = KeyboardGenerator.GetKeyboardButtons('A', 'J');
             _secondKeyboardRow = KeyboardGenerator.GetKeyboardButtons('K', 'S');
             _thirdKeyboardRow = KeyboardGenerator.GetKeyboardButtons('T', 'Z');
-            KeyboardPressed = new KeyboardPressedCommand(this);
             ExitGame = new NavigateCommand<AccountViewModel>(navigationStore, () => new AccountViewModel(navigationStore, userStore, _currentUserWhoPlays));
             _userStore = userStore;
             SetWordToGuess();
+            ResetInProgressImage();
             _currentUserWhoPlays = user;
             _navigationStore = navigationStore;
-
+            KeyboardPressed = new KeyboardPressedCommand(this);
             CurrentUsername = _currentUserWhoPlays.username;
             ImagePath = _currentUserWhoPlays.avatarPath;
         }
+        public void ResetGame()
+        {
+            ResetChances();
+            SetWordToGuess();
+            ResetInProgressImage();
+        }
+        public void ResetChances()
+        {
+            chancesLeft = 4;
+        }
+        public void ResetInProgressImage()
+        {
+            _inProgressWordToGuess = new string('*', _wordToGuess.Length);
+        }
         public void InitializeTheHangmanIndexImage()
         {
-            indexOfHangman = 4;
+            _indexOfHangman = 0;
         }
         public void SetWordToGuess()
         {

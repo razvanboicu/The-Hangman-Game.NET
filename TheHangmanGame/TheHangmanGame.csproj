@@ -72,6 +72,7 @@
     <Compile Include="Commands\NavigateCommand.cs" />
     <Compile Include="Commands\NextImageCommand.cs" />
     <Compile Include="Commands\PrevImageCommand.cs" />
+    <Compile Include="Commands\ResetGameCommand.cs" />
     <Compile Include="Commands\UpdateAvatarCommand.cs" />
     <Compile Include="Models\Button.cs" />
     <Compile Include="Models\DataProvider.cs" />
