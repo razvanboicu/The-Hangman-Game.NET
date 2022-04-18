@@ -17,27 +17,12 @@ namespace TheHangmanGame.ViewModels
         private readonly User _currentUserWhoPlays;
         private readonly NavigationStore _navigationStore;
         private readonly UserStore _userStore;
-        private KeyboardCollection _keyboardCollection = new KeyboardCollection();
         private string _currentUsername;
-        private List<Button> _listView1;
-        private List<Button> _listView2;
-        private List<Button> _listView3;
         private ImgPath _imagePath;
-        public List<Button> ListView1
-        {
-            get { return _listView1; }
-            set { _listView1 = value; }
-        }
-        public List<Button> ListView2
-        {
-            get { return _listView2; }
-            set { _listView2 = value; }
-        }
-        public List<Button> ListView3
-        {
-            get { return _listView3; }
-            set { _listView3 = value; }
-        }
+
+        private ObservableCollection<Models.Button> _firstKeyboardRow;
+        private ObservableCollection<Models.Button> _secondKeyboardRow;
+        private ObservableCollection<Models.Button> _thirdKeyboardRow;
         public ImgPath ImagePath
         {
             get { return _imagePath; }
@@ -49,17 +34,31 @@ namespace TheHangmanGame.ViewModels
             set { _currentUsername = value; }
         }
         public ICommand ExitGame { get; }
+   
+        public ObservableCollection<Models.Button> FirstKeyboardRow
+        {
+            get { return _firstKeyboardRow; }
+            set { _firstKeyboardRow = value; }
+        }
+        public ObservableCollection<Models.Button> SecondKeyboardRow
+        {
+            get { return _secondKeyboardRow; }
+            set { _secondKeyboardRow = value; }
+        }
+        public ObservableCollection<Models.Button> ThirdKeyboardRow
+        {
+            get { return _thirdKeyboardRow; }
+            set { _thirdKeyboardRow = value; }
+        }
 
+        public ICommand KeyboardPressed { get; }
+        public GameViewModel() { }
         public GameViewModel(NavigationStore navigationStore, UserStore userStore, User user)
         {
-         
-            _listView1 = _keyboardCollection.GetKeyboardFrom('A', 'Q');
-            _listView2 = _keyboardCollection.GetKeyboardFrom('A', 'Q');
-            _listView3 = _keyboardCollection.GetKeyboardFrom('A', 'Q');
-            foreach (var button in _listView1)
-            {
-                //Console.WriteLine( + "\n");
-            }
+            _firstKeyboardRow = KeyboardCollection.GetKeyboardButtons('A', 'J');
+            _secondKeyboardRow = KeyboardCollection.GetKeyboardButtons('K', 'S');
+            _thirdKeyboardRow = KeyboardCollection.GetKeyboardButtons('T', 'Z');
+            KeyboardPressed = new KeyboardPressedCommand(this);
             ExitGame = new NavigateCommand<AccountViewModel>(navigationStore, () => new AccountViewModel(navigationStore, userStore, _currentUserWhoPlays));
             _userStore = userStore;
             _currentUserWhoPlays = user;

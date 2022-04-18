@@ -7,8 +7,7 @@
              xmlns:local="clr-namespace:TheHangmanGame.Views" xmlns:viewmodels="clr-namespace:TheHangmanGame.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:GameViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="1280" Background="Black">
-   
-   
+
     <Grid>
        
         <StackPanel Orientation="Horizontal">
@@ -37,28 +36,63 @@
                         
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Height="370" VerticalAlignment="Center">
-                    <ListView VerticalAlignment="Bottom"  ItemsSource="{Binding ListView1}">
-                        <ListView.ItemsPanel>
+                <StackPanel Height="370" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <ItemsControl ItemsSource="{Binding FirstKeyboardRow}">
+                        <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <StackPanel Orientation="Horizontal"/>
+                                <StackPanel Orientation="Horizontal"  VerticalAlignment=" Center" HorizontalAlignment="Center"/>
                             </ItemsPanelTemplate>
-                        </ListView.ItemsPanel>
-                    </ListView>
-                    <ListView VerticalAlignment="Bottom" ItemsSource="{Binding ListView2}">
-                        <ListView.ItemsPanel>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button Content="{Binding Letter}"
+                                        Visibility="{Binding Visible, Converter={StaticResource StringIsEmptyVisibilityConverter}}"
+                                        Height="55" Width="55" Margin="3"
+                                        Background="White" Foreground="Black" BorderBrush="White"
+                                        Command="{Binding DataContext.KeyboardPressed, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType = ItemsControl}}"
+                                        CommandParameter="{Binding Letter}"
+                                       ></Button>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                    <ItemsControl ItemsSource="{Binding SecondKeyboardRow}">
+                        <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <StackPanel Orientation="Horizontal"/>
+                                <StackPanel Orientation="Horizontal"  VerticalAlignment=" Center" HorizontalAlignment="Center"/>
                             </ItemsPanelTemplate>
-                        </ListView.ItemsPanel>
-                    </ListView>
-                    <ListView VerticalAlignment="Bottom" ItemsSource="{Binding ListView3}">
-                        <ListView.ItemsPanel>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button Content="{Binding Letter}"
+                                        Visibility="{Binding Visible, Converter={StaticResource StringIsEmptyVisibilityConverter}}"
+                                        Height="55" Width="55" 
+                                        Margin="3"
+                                        Background="White" Foreground="Black" BorderBrush="White"
+                                        Command="{Binding DataContext.KeyboardPressed, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType = ItemsControl}}"
+                                        CommandParameter="{Binding Letter}"
+                                       ></Button>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                    <ItemsControl ItemsSource="{Binding ThirdKeyboardRow}">
+                        <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <StackPanel Orientation="Horizontal"/>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment=" Center" HorizontalAlignment="Center"/>
                             </ItemsPanelTemplate>
-                        </ListView.ItemsPanel>
-                    </ListView>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button Content="{Binding Letter}"
+                                        Visibility="{Binding Visible, Converter={StaticResource StringIsEmptyVisibilityConverter}}"
+                                        Height="55" Width="55" 
+                                        Margin="3"
+                                        Background="White" Foreground="Black" BorderBrush="White"
+                                        Command="{Binding DataContext.KeyboardPressed, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType = ItemsControl}}"
+                                        CommandParameter="{Binding Letter}"
+                                       ></Button>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
                 </StackPanel>
             </StackPanel>
         </StackPanel>

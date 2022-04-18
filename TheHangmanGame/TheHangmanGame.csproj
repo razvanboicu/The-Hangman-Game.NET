@@ -66,11 +66,13 @@
     </ApplicationDefinition>
     <Compile Include="Commands\CommandBase.cs" />
     <Compile Include="Commands\CreateUserCommand.cs" />
+    <Compile Include="Commands\KeyboardPressedCommand.cs" />
     <Compile Include="Commands\LoginCommand.cs" />
     <Compile Include="Commands\NavigateCommand.cs" />
     <Compile Include="Commands\NextImageCommand.cs" />
     <Compile Include="Commands\PrevImageCommand.cs" />
     <Compile Include="Commands\UpdateAvatarCommand.cs" />
+    <Compile Include="Models\Button.cs" />
     <Compile Include="Models\KeyboardCollection.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Stores\NavigationStore.cs" />

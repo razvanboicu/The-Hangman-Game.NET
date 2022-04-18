@@ -11,22 +11,15 @@ namespace TheHangmanGame.Models
 {
     public class KeyboardCollection
     {
-        public List<Button> GetKeyboardFrom(char from, char to)
+        static public ObservableCollection<Button> GetKeyboardButtons(char from, char to)
         {
-            List<Button> arrayOfButtons = new List<Button>();
+            ObservableCollection<Button> arrayOfButtons = new ObservableCollection<Button>();
             for (int i = 0; i <= ((to - '0') - (from - '0')); i++)
             {
-                arrayOfButtons.Add(new Button()
-                {
-                    Height = 25,
-                    Width = 25,
-                    Content = (from - '0' + i - '0') + '0',
-                    Background = new SolidColorBrush(Colors.White),
-                    BorderBrush = new SolidColorBrush(Colors.White),
-                    Foreground = new SolidColorBrush(Colors.Black)
-                }) ;
+                char c = (char)((char)(((from - '0') + i - 1 ) - '0') + 'a');
+                arrayOfButtons.Add(new Button(c.ToString(), "Visibile"));
             }
-            Console.WriteLine(arrayOfButtons.Count());
+            //Console.WriteLine(arrayOfButtons.Count());
 
             return arrayOfButtons;
         }
