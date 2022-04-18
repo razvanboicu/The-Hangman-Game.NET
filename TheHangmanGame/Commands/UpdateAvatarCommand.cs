@@ -24,6 +24,7 @@ namespace TheHangmanGame.Commands
         
         public override void Execute(object parameter)
         {
+            
             _userStore.UpdateAvatarProfile(_userForNewSettings, _settingsViewModel.ImagePath);
         }
     }

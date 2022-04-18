@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -27,10 +28,28 @@ namespace TheHangmanGame.ViewModels
         private int chancesLeft;
         private int _indexOfHangman;
         private ImgPath _hangmanPath;
+        private string _timerSource;
+        private int _secondsLeft;
+
+        public int SecondsLeft
+        {
+            get { return _secondsLeft; }
+            set
+            {
+                _secondsLeft = value;
+                OnPropertyChanged(nameof(SecondsLeft));
+            }
+        }
 
         private ObservableCollection<Models.Button> _firstKeyboardRow;
         private ObservableCollection<Models.Button> _secondKeyboardRow;
         private ObservableCollection<Models.Button> _thirdKeyboardRow;
+
+        public string TimerSource
+        {
+            get { return _timerSource; }
+            set { _timerSource = value; }
+        }
 
         public string InProgressWordToGuess
         {
@@ -41,8 +60,10 @@ namespace TheHangmanGame.ViewModels
                 OnPropertyChanged(nameof(InProgressWordToGuess));
             }
         }
-        public ICommand ResetGameButton { get; }
 
+
+
+        public ICommand ResetGameButton { get; }
         public int IndexOfHangman
         {
             get { return _indexOfHangman; }
@@ -92,6 +113,7 @@ namespace TheHangmanGame.ViewModels
             get { return _currentCategory; }
             set { _currentCategory = value; }
         }
+
         public ObservableCollection<Models.Button> FirstKeyboardRow
         {
             get { return _firstKeyboardRow; }
@@ -125,19 +147,23 @@ namespace TheHangmanGame.ViewModels
             ExitGame = new NavigateCommand<AccountViewModel>(navigationStore, () => new AccountViewModel(navigationStore, userStore, _currentUserWhoPlays));
             _userStore = userStore;
             SetWordToGuess();
+            _secondsLeft = 5;
             ResetInProgressImage();
             _currentUserWhoPlays = user;
             _navigationStore = navigationStore;
+            ResetGameButton = new ResetGameCommand(this, _navigationStore, _userStore, _currentUserWhoPlays, _eCategory);
             KeyboardPressed = new KeyboardPressedCommand(this);
             CurrentUsername = _currentUserWhoPlays.username;
             ImagePath = _currentUserWhoPlays.avatarPath;
+            //while (_secondsLeft != 0)
+            //{
+            //    Thread.Sleep(1000);
+            //    _secondsLeft--;
+            //    Console.WriteLine(_secondsLeft.ToString());
+
+            //}
         }
-        public void ResetGame()
-        {
-            ResetChances();
-            SetWordToGuess();
-            ResetInProgressImage();
-        }
+
         public void ResetChances()
         {
             chancesLeft = 4;
@@ -159,13 +185,13 @@ namespace TheHangmanGame.ViewModels
             switch (_eCategory)
             {
                 case ECategory.eCars:
-                    _currentCategory = "Cars category!";
+                    _currentCategory = "You are in cars category";
                     break;
                 case ECategory.eMovies:
-                    _currentCategory = "Movies category!";
+                    _currentCategory = "You are in movies category";
                     break;
                 case ECategory.eCountries:
-                    _currentCategory = "Countries category!";
+                    _currentCategory = "You are in countries category";
                     break;
                 default:
                     break;

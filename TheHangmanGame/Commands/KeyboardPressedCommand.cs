@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using TheHangmanGame.ViewModels;
 
@@ -19,36 +21,51 @@ namespace TheHangmanGame.Commands
         public override void Execute(object parameter)
         {
             string buttonPressed = (parameter.ToString());
-            //Console.WriteLine(buttonPressed);
+            
             if (_gameViewModel.ChancesLeft > 0)
             {
-                Console.WriteLine("Intrat in chances");
-                bool found = false;
-                for (int i = 0; i < _gameViewModel.WordToGuess.Length; i++)
+                if (!CheckIfIWin(_gameViewModel.InProgressWordToGuess))
                 {
-                    if (_gameViewModel.WordToGuess[i].ToString() == buttonPressed)
+                    bool found = false;
+                    for (int i = 0; i < _gameViewModel.WordToGuess.Length; i++)
                     {
-                        //Console.WriteLine("Egalul bun");
-                        _gameViewModel.InProgressWordToGuess = PutCharatersInWord(_gameViewModel.InProgressWordToGuess, _gameViewModel.WordToGuess, buttonPressed);
-                        //Console.WriteLine(_gameViewModel.InProgressWordToGuess);
-                        ResetKeyboard(buttonPressed);
-                        found = true;
+                        if (_gameViewModel.WordToGuess[i].ToString() == buttonPressed)
+                        {
+                            _gameViewModel.InProgressWordToGuess = PutCharatersInWord(_gameViewModel.InProgressWordToGuess, _gameViewModel.WordToGuess, buttonPressed);
+                            if (CheckIfIWin(_gameViewModel.InProgressWordToGuess))
+                                MessageBox.Show("Congrats! You won");
+                            ResetKeyboard(buttonPressed);
+                            found = true;
+                        }
+                    }
+                    ResetKeyboard(buttonPressed);
+                    if (!found)
+                    {
+                        _gameViewModel.IndexOfHangman++;
+                        _gameViewModel.ChancesLeft--;
+                        if (_gameViewModel.ChancesLeft == 0)
+                        {
+                            MessageBox.Show("YOU LOST!");
+                        }
                     }
                 }
-                ResetKeyboard(buttonPressed);
-                if (!found)
-                {
-                    _gameViewModel.IndexOfHangman++;
-                    _gameViewModel.ChancesLeft--;
-                    if (_gameViewModel.ChancesLeft == 0)
-                        Console.WriteLine("GAME OVER");
-                }
+                else
+                    MessageBox.Show("Congrats! You won");
             }
             else
-                Console.WriteLine("GAME OVER");
-
+                MessageBox.Show("YOU LOST!");
         }
-        public void ResetKeyboard(string letterPressed)
+        private bool CheckIfIWin(string wordForModifies)
+        {
+            char[] array = wordForModifies.ToCharArray();
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] == '*')
+                    return false;
+            }
+            return true;
+        }
+        private void ResetKeyboard(string letterPressed)
         {
             for (int i = 0; i < _gameViewModel.FirstKeyboardRow.Count; i++)
             {
@@ -75,7 +92,7 @@ namespace TheHangmanGame.Commands
                 }
             }
         }
-        public string PutCharatersInWord(string wordForModifies, string word, string buttonPressedLetter)
+        private string PutCharatersInWord(string wordForModifies, string word, string buttonPressedLetter)
         {
             int index = 0;
             foreach (var it in word)

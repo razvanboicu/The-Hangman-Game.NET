@@ -65,7 +65,7 @@ namespace TheHangmanGame.ViewModels
             _navigationStore = navigationStore;
             _currentUserLoggedIn = user;
             _currentUsername = _currentUserLoggedIn.username;
-            OnPropertyChanged(nameof(CurrentUserLoggedIn));
+            //OnPropertyChanged(nameof(CurrentUserLoggedIn));
 
             BackCommand = new NavigateCommand<AccountViewModel>(_navigationStore, () => new AccountViewModel(_navigationStore, _userStore, _currentUserLoggedIn));
             PreviousImageButton = new PrevImageCommand(this);

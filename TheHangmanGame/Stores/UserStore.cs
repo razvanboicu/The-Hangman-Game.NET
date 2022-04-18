@@ -19,7 +19,6 @@ namespace TheHangmanGame.Stores
         public void UpdateAvatarProfile(User user, ImgPath newImagePath)
         {
             User modifiedUser = new User(user.username, user.password, newImagePath);
-            
             List<string> lst = File.ReadAllLines(@pathFile).Where(arg => !string.IsNullOrWhiteSpace(arg)).ToList();
             lst.RemoveAll(x => x.Split(' ')[0].Equals(user.username));
             File.WriteAllLines(@pathFile, lst);
@@ -28,13 +27,11 @@ namespace TheHangmanGame.Stores
                 writer.WriteLine(modifiedUser.username + " " + modifiedUser.password + " " + newImagePath);
                 Console.WriteLine("Successfully user avatar updated!");
             }
-            
-            
         }
 
         public void DeleteUser(User userForDelete)
         {
-            
+
             List<string> lst = File.ReadAllLines(@pathFile).Where(arg => !string.IsNullOrWhiteSpace(arg)).ToList();
             lst.RemoveAll(x => x.Split(' ')[0].Equals(userForDelete.username));
             File.WriteAllLines(@pathFile, lst);

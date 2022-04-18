@@ -32,24 +32,30 @@
                     <Image Source="{Binding HangmanPath}" Width="250" Height="420" Stretch="Uniform"/>
                 </StackPanel>
             </StackPanel>
-            <StackPanel Width="930" Orientation="Vertical" HorizontalAlignment="Center">
-                <StackPanel Orientation="Horizontal" Height="350">
-                    <StackPanel Width="300" Margin="15" VerticalAlignment="Top" >
-                        <TextBlock Text="{Binding CurrentCategory}" FontSize="35" FontFamily="Impact" Foreground="White"/>
-                    </StackPanel>
-                    <StackPanel Width="300" Margin="15" VerticalAlignment="Top" HorizontalAlignment="Right">
-                        <TextBlock Text="{Binding InProgressWordToGuess}" FontSize="35" FontFamily="Impact" Foreground="White"/>
-                    </StackPanel>
-                    <Button Width="100" Height="40" Style="{StaticResource MaterialDesignRaisedButton}"
+            <StackPanel Width="930" Orientation="Vertical" >
+                <StackPanel Orientation="Horizontal" Height="350" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                        <StackPanel Width="390" Margin="15" VerticalAlignment="Top" >
+                            <TextBlock Text="{Binding CurrentCategory}" FontSize="25" FontFamily="Impact" Foreground="White"/>
+                        </StackPanel>
+                        
+                        <!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
+                            <Button Width="100" Height="40" Style="{StaticResource MaterialDesignRaisedButton}"
                                 materialDesign:ButtonAssist.CornerRadius="10" BorderThickness="175" BorderBrush="DarkGoldenrod"
-                                Background="DarkGoldenrod" Foreground="White" ToolTip="Back to account"  Command="{Binding Path = ExitGame}">
-                        Reset
-                    </Button>
-                    <StackPanel>
-                        <TextBlock Text="{Binding WordToGuess}" FontSize="35" FontFamily="Impact" Foreground="White"/>
+                                Background="DarkGoldenrod" Foreground="White" ToolTip="Back to account"  Command="{Binding Path = ResetGameButton}">
+                                Reset
+                            </Button>
+                        </StackPanel>-->
+                        <TextBlock Text="{Binding SecondsLeft}" FontSize="35" FontFamily="Impact" Foreground="White"/>
                     </StackPanel>
+                   
+                    
+                    
                 </StackPanel>
                 <StackPanel Height="370" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                    <StackPanel Margin="15" VerticalAlignment="Top" HorizontalAlignment="Center">
+                        <TextBlock Text="{Binding InProgressWordToGuess}" FontSize="35" FontFamily="Impact" Foreground="White"/>
+                    </StackPanel>
                     <ItemsControl ItemsSource="{Binding FirstKeyboardRow}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
@@ -86,7 +92,15 @@
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
+                    <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 30 0 0">
+                        <Button  Height="40" Style="{StaticResource MaterialDesignRaisedButton}"
+                                materialDesign:ButtonAssist.CornerRadius="166" BorderThickness="165" BorderBrush="DarkGoldenrod"
+                                Background="DarkGoldenrod" Foreground="White" ToolTip="Back to account"  Command="{Binding Path = ResetGameButton}">
+                            Reset
+                        </Button>
+                    </StackPanel>
                 </StackPanel>
+                
             </StackPanel>
         </StackPanel>
 
