@@ -2,7 +2,7 @@
 This is the hangman game, but with graphic interface, with the ability to play in various categories.
 
 The game allows you to:
-  Create an account
+  Create an account <br>
   Log in
   Add a profile picture to the account
   Delete the account 
