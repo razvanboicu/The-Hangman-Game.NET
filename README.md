@@ -1,7 +1,7 @@
 # The-Hangman-Game.NET
 This is the hangman game, but with graphic interface, with the ability to play in various categories. <br>
 
-The game allows you to: <br>
+<b> The game allows you to: </b> <br>
   Create an account <br>
   Log in <br>
   Add a profile picture to the account <br>
